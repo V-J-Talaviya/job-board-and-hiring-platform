@@ -1,0 +1,21 @@
+{
+  "name": "job-board-platform",
+  "version": "1.0.0",
+  "description": "Job Board & Hiring Platform",
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "server:dev": "npm run dev --prefix server",
+    "client:dev": "npm run dev --prefix client",
+    "dev": "concurrently -n SERVER,CLIENT -c blue,green \"npm run server:dev\" \"npm run client:dev\"",
+    "build": "npm run build --prefix server && npm run build --prefix client",
+    "test": "npm run test --prefix server",
+    "typecheck": "npm run typecheck --prefix server && npm run typecheck --prefix client",
+    "db:migrate": "npm run db:migrate --prefix server",
+    "db:seed": "npm run db:seed --prefix server"
+  },
+  "dependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
